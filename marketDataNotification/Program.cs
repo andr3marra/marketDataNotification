@@ -50,10 +50,10 @@ internal partial class Program {
                     var result = await httpResponseMessage.Content.ReadFromJsonAsync<GlobalQuoteResponse>();
 
                     if (result.GlobalQuote.Price > upperBound) {
-                        await SendMail($"Upper bound reached for {symbol}", $"The upper limit of {upperBound} for {symbol}. Current price is {result.GlobalQuote.Price}. Asset sale is recomended");
+                        await SendMail($"Upper bound reached for {symbol}", $"The upper limit of {upperBound} for {symbol} was reached. Current price is {result.GlobalQuote.Price}. Asset sale is recomended");
                     }
                     else if (result.GlobalQuote.Price < lowerBound) {
-                        await SendMail($"Lower bound reached for {symbol}", $"The lower limit of {lowerBound} for {symbol}. Current price is {result.GlobalQuote.Price}. Asset purchase is recomended");
+                        await SendMail($"Lower bound reached for {symbol}", $"The lower limit of {lowerBound} for {symbol} was reached. Current price is {result.GlobalQuote.Price}. Asset purchase is recomended");
                     }
                     else {
                         logger.LogInformation("Last Price was {price}, no bound reached", result.GlobalQuote.Price);
