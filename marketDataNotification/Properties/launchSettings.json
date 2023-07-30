@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "marketDataNotification": {
+      "commandName": "Project",
+      "commandLineArgs": "PETR4.SA 22.67 22.59"
+    }
+  }
+}
